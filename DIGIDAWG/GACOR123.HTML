@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -26,21 +26,14 @@
         --accent-cyan: #06b6d4;
         --green: #10b981;
         --green-2: #34d399;
-        --green-bg: #022c22;
-        --green-border: #064e3b;
         --yellow: #f59e0b;
         --yellow-2: #fbbf24;
-        --yellow-bg: #1c1200;
-        --yellow-border: #451a03;
         --red: #ef4444;
         --red-2: #f87171;
-        --red-bg: #1a0505;
-        --red-border: #450a0a;
         --white: #f8fafc;
         --font: "Plus Jakarta Sans", sans-serif;
         --mono: "Space Mono", monospace;
       }
-
       *,
       *::before,
       *::after {
@@ -48,11 +41,9 @@
         margin: 0;
         padding: 0;
       }
-
       html {
         scroll-behavior: smooth;
       }
-
       body {
         font-family: var(--font);
         background: var(--navy);
@@ -60,8 +51,6 @@
         min-height: 100vh;
         overflow-x: hidden;
       }
-
-      /* ── BACKGROUND GRID ── */
       body::before {
         content: "";
         position: fixed;
@@ -73,7 +62,6 @@
         pointer-events: none;
         z-index: 0;
       }
-
       body::after {
         content: "";
         position: fixed;
@@ -90,7 +78,6 @@
         pointer-events: none;
         z-index: 0;
       }
-
       .container {
         max-width: 900px;
         margin: 0 auto;
@@ -98,8 +85,6 @@
         position: relative;
         z-index: 1;
       }
-
-      /* ── TOPBAR ── */
       .topbar {
         display: flex;
         align-items: center;
@@ -107,14 +92,12 @@
         padding: 20px 0 0;
         margin-bottom: 48px;
       }
-
       .logo {
         display: flex;
         align-items: center;
         gap: 10px;
         text-decoration: none;
       }
-
       .logo-icon {
         width: 36px;
         height: 36px;
@@ -128,29 +111,24 @@
         align-items: center;
         justify-content: center;
       }
-
       .logo-icon svg {
         width: 20px;
         height: 20px;
       }
-
       .logo-text {
         font-size: 15px;
         font-weight: 700;
         color: var(--white);
         letter-spacing: -0.3px;
       }
-
       .logo-text span {
         color: var(--accent-blue-2);
       }
-
       .topbar-badges {
         display: flex;
         gap: 8px;
         align-items: center;
       }
-
       .topbar-badge {
         font-size: 11px;
         font-weight: 600;
@@ -161,14 +139,11 @@
         background: rgba(59, 130, 246, 0.07);
         letter-spacing: 0.03em;
       }
-
-      /* ── HERO ── */
       .hero {
         text-align: center;
         margin-bottom: 48px;
         animation: fadeUp 0.7s ease both;
       }
-
       .hero-eyebrow {
         display: inline-flex;
         align-items: center;
@@ -183,7 +158,6 @@
         margin-bottom: 24px;
         letter-spacing: 0.04em;
       }
-
       .hero-eyebrow-dot {
         width: 6px;
         height: 6px;
@@ -191,7 +165,6 @@
         border-radius: 50%;
         animation: pulse-dot 2s ease infinite;
       }
-
       .hero h1 {
         font-size: clamp(28px, 5vw, 44px);
         font-weight: 800;
@@ -200,7 +173,6 @@
         margin-bottom: 18px;
         color: #fff;
       }
-
       .hero h1 .gradient-text {
         background: linear-gradient(
           90deg,
@@ -211,16 +183,40 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
-
       .hero-desc {
         font-size: 16px;
         color: var(--slate-4);
         line-height: 1.7;
-        max-width: 540px;
-        margin: 0 auto 36px;
+        max-width: 560px;
+        margin: 0 auto 16px;
       }
 
-      /* ── INPUT AREA ── */
+      /* ── DISCLAIMER BANNER (BARU) ── */
+      .hero-disclaimer {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        background: rgba(245, 158, 11, 0.07);
+        border: 1px solid rgba(245, 158, 11, 0.25);
+        border-radius: 12px;
+        padding: 12px 16px;
+        max-width: 640px;
+        margin: 0 auto 28px;
+        text-align: left;
+      }
+      .hero-disclaimer svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .hero-disclaimer p {
+        font-size: 12.5px;
+        color: #fcd34d;
+        line-height: 1.65;
+      }
+      .hero-disclaimer strong {
+        color: #fde68a;
+      }
+
       .input-card {
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -231,7 +227,6 @@
         margin: 0 auto;
         box-shadow: 0 0 60px rgba(59, 130, 246, 0.07);
       }
-
       .input-label {
         font-size: 12px;
         font-weight: 600;
@@ -240,13 +235,11 @@
         letter-spacing: 0.08em;
         margin-bottom: 10px;
       }
-
       .input-row {
         display: flex;
         gap: 10px;
         align-items: center;
       }
-
       .url-input-wrap {
         flex: 1;
         display: flex;
@@ -260,22 +253,18 @@
           border-color 0.2s,
           box-shadow 0.2s;
       }
-
       .url-input-wrap:focus-within {
         border-color: rgba(59, 130, 246, 0.5);
         box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
       }
-
       .url-input-wrap.shake {
         animation: shake 0.4s ease;
         border-color: rgba(239, 68, 68, 0.6);
       }
-
       .url-input-wrap svg {
         flex-shrink: 0;
         opacity: 0.4;
       }
-
       .url-input {
         flex: 1;
         background: none;
@@ -286,13 +275,11 @@
         color: var(--white);
         width: 100%;
       }
-
       .url-input::placeholder {
         color: var(--slate-3);
         font-family: var(--font);
         font-size: 14px;
       }
-
       .btn-analyze {
         background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);
         color: #fff;
@@ -314,7 +301,6 @@
         box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
         letter-spacing: -0.2px;
       }
-
       .btn-analyze:hover {
         opacity: 0.9;
         transform: translateY(-1px);
@@ -323,7 +309,6 @@
       .btn-analyze:active {
         transform: translateY(0) scale(0.98);
       }
-
       .url-analyzed-tag {
         display: none;
         align-items: center;
@@ -338,7 +323,6 @@
         font-family: var(--mono);
         word-break: break-all;
       }
-
       .url-analyzed-tag.show {
         display: flex;
       }
@@ -354,19 +338,16 @@
         animation: fadeUp 0.5s ease both 0.1s;
         backdrop-filter: blur(20px);
       }
-
       .status-card.s-green {
         background: rgba(16, 185, 129, 0.06);
         border-color: rgba(16, 185, 129, 0.25);
         box-shadow: 0 0 40px rgba(16, 185, 129, 0.08);
       }
-
       .status-card.s-yellow {
         background: rgba(245, 158, 11, 0.06);
         border-color: rgba(245, 158, 11, 0.25);
         box-shadow: 0 0 40px rgba(245, 158, 11, 0.08);
       }
-
       .status-card.s-red {
         background: rgba(239, 68, 68, 0.06);
         border-color: rgba(239, 68, 68, 0.3);
@@ -375,14 +356,12 @@
           fadeUp 0.5s ease both 0.1s,
           pulse-red-glow 2s ease infinite 0.5s;
       }
-
       .status-top {
         display: flex;
         align-items: flex-start;
         gap: 16px;
         margin-bottom: 20px;
       }
-
       .status-icon-wrap {
         width: 56px;
         height: 56px;
@@ -393,7 +372,6 @@
         flex-shrink: 0;
         transition: all 0.4s;
       }
-
       .status-icon-wrap.ic-idle {
         background: rgba(255, 255, 255, 0.06);
       }
@@ -406,17 +384,14 @@
       .status-icon-wrap.ic-red {
         background: rgba(239, 68, 68, 0.15);
       }
-
       .status-icon-wrap svg {
         width: 28px;
         height: 28px;
         transition: all 0.4s;
       }
-
       .status-info {
         flex: 1;
       }
-
       .status-badge {
         display: inline-block;
         font-size: 11px;
@@ -427,7 +402,6 @@
         border-radius: 100px;
         margin-bottom: 8px;
       }
-
       .sb-idle {
         background: rgba(255, 255, 255, 0.08);
         color: var(--slate-4);
@@ -444,7 +418,6 @@
         background: rgba(239, 68, 68, 0.15);
         color: var(--red-2);
       }
-
       .status-title {
         font-size: 20px;
         font-weight: 800;
@@ -453,38 +426,26 @@
         color: var(--white);
         transition: color 0.4s;
       }
-
       .status-sub {
         font-size: 13px;
         color: var(--slate-4);
       }
-
-      .status-actions {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        margin-left: auto;
-      }
-
       .score-label {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 8px;
       }
-
       .score-label span {
         font-size: 12px;
         color: var(--slate-4);
       }
-
       .score-label .score-num {
         font-family: var(--mono);
         font-size: 13px;
         font-weight: 700;
         color: var(--white);
       }
-
       .score-bar-bg {
         height: 8px;
         background: rgba(255, 255, 255, 0.07);
@@ -492,7 +453,6 @@
         overflow: hidden;
         margin-bottom: 20px;
       }
-
       .score-bar-fill {
         height: 100%;
         border-radius: 100px;
@@ -501,7 +461,6 @@
           background 0.5s;
         position: relative;
       }
-
       .score-bar-fill::after {
         content: "";
         position: absolute;
@@ -513,7 +472,6 @@
         border-radius: 100px;
         filter: blur(4px);
       }
-
       .status-message {
         font-size: 13.5px;
         line-height: 1.65;
@@ -522,7 +480,6 @@
         border: 1px solid transparent;
         transition: all 0.4s;
       }
-
       .sm-idle {
         background: rgba(255, 255, 255, 0.04);
         border-color: rgba(255, 255, 255, 0.07);
@@ -543,21 +500,17 @@
         border-color: rgba(239, 68, 68, 0.25);
         color: #fca5a5;
       }
-
-      /* ── CHECKLIST SECTIONS ── */
       .section-header {
         display: flex;
         align-items: center;
         gap: 10px;
         margin-bottom: 16px;
       }
-
       .section-header-line {
         flex: 1;
         height: 1px;
         background: rgba(255, 255, 255, 0.07);
       }
-
       .section-header-text {
         font-size: 11px;
         font-weight: 700;
@@ -566,7 +519,6 @@
         color: var(--slate-3);
         white-space: nowrap;
       }
-
       .checklist-card {
         background: rgba(255, 255, 255, 0.025);
         border: 1px solid rgba(255, 255, 255, 0.07);
@@ -577,7 +529,6 @@
         transition: border-color 0.3s;
         animation: fadeUp 0.5s ease both;
       }
-
       .checklist-card:nth-child(1) {
         animation-delay: 0.1s;
       }
@@ -590,7 +541,6 @@
       .checklist-card:nth-child(4) {
         animation-delay: 0.4s;
       }
-
       .cat-head {
         display: flex;
         align-items: center;
@@ -598,7 +548,6 @@
         padding: 18px 22px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       }
-
       .cat-icon {
         width: 40px;
         height: 40px;
@@ -608,7 +557,6 @@
         justify-content: center;
         flex-shrink: 0;
       }
-
       .ci-blue {
         background: rgba(59, 130, 246, 0.15);
         color: var(--accent-blue-2);
@@ -625,28 +573,23 @@
         background: rgba(6, 182, 212, 0.15);
         color: #67e8f9;
       }
-
       .cat-icon svg {
         width: 20px;
         height: 20px;
       }
-
       .cat-meta {
         flex: 1;
       }
-
       .cat-meta h3 {
         font-size: 14px;
         font-weight: 700;
         color: var(--white);
         margin-bottom: 2px;
       }
-
       .cat-meta p {
         font-size: 12px;
         color: var(--slate-3);
       }
-
       .cat-count {
         font-family: var(--mono);
         font-size: 12px;
@@ -656,8 +599,6 @@
         padding: 4px 10px;
         border-radius: 8px;
       }
-
-      /* ── CHECK ITEMS ── */
       .check-item {
         display: flex;
         align-items: flex-start;
@@ -668,19 +609,15 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         position: relative;
       }
-
       .check-item:last-child {
         border-bottom: none;
       }
-
       .check-item:hover {
         background: rgba(255, 255, 255, 0.03);
       }
-
       .check-item.checked-item {
         background: rgba(239, 68, 68, 0.04);
       }
-
       .checkbox {
         width: 20px;
         height: 20px;
@@ -694,20 +631,17 @@
         margin-top: 1px;
         transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
       }
-
       .checkbox.active {
         background: var(--red);
         border-color: var(--red);
         box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
         transform: scale(1.05);
       }
-
       .checkbox.active-warn {
         background: var(--yellow);
         border-color: var(--yellow);
         box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
       }
-
       .checkbox svg {
         width: 11px;
         height: 11px;
@@ -718,23 +652,19 @@
       .checkbox.active-warn svg {
         opacity: 1;
       }
-
       .check-body {
         flex: 1;
       }
-
       .check-text {
         font-size: 13.5px;
         color: var(--slate-5);
         line-height: 1.55;
         transition: all 0.2s;
       }
-
       .check-text.dimmed {
         color: var(--slate-3);
         text-decoration: line-through;
       }
-
       .check-badge {
         display: inline-flex;
         align-items: center;
@@ -746,7 +676,6 @@
         border-radius: 100px;
         margin-top: 5px;
       }
-
       .cb-danger {
         background: rgba(239, 68, 68, 0.15);
         color: var(--red-2);
@@ -762,8 +691,6 @@
         color: var(--accent-blue-2);
         border: 1px solid rgba(59, 130, 246, 0.2);
       }
-
-      /* ── TIPS SECTION ── */
       .tips-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -771,7 +698,6 @@
         margin-bottom: 32px;
         animation: fadeUp 0.5s ease both 0.4s;
       }
-
       .tip-card {
         background: rgba(255, 255, 255, 0.025);
         border: 1px solid rgba(255, 255, 255, 0.07);
@@ -781,12 +707,10 @@
           border-color 0.2s,
           transform 0.2s;
       }
-
       .tip-card:hover {
         border-color: rgba(255, 255, 255, 0.13);
         transform: translateY(-2px);
       }
-
       .tip-icon {
         width: 36px;
         height: 36px;
@@ -796,26 +720,23 @@
         justify-content: center;
         margin-bottom: 12px;
       }
-
       .tip-icon svg {
         width: 18px;
         height: 18px;
       }
-
       .tip-title {
         font-size: 13px;
         font-weight: 700;
         color: var(--white);
         margin-bottom: 6px;
       }
-
       .tip-text {
         font-size: 12px;
         color: var(--slate-3);
         line-height: 1.6;
       }
 
-      /* ── FOOTER ── */
+      /* ── FOOTER NOTE (DIPERBARUI) ── */
       .footer-note {
         display: flex;
         gap: 12px;
@@ -827,7 +748,6 @@
         margin-bottom: 40px;
         animation: fadeUp 0.5s ease both 0.5s;
       }
-
       .footer-note svg {
         flex-shrink: 0;
         margin-top: 1px;
@@ -835,41 +755,33 @@
         height: 16px;
         opacity: 0.5;
       }
-
       .footer-note p {
         font-size: 12.5px;
         color: var(--slate-3);
         line-height: 1.6;
       }
-
       .footer-note strong {
         color: var(--slate-5);
       }
-
       .footer {
         text-align: center;
         padding: 24px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.06);
       }
-
       .footer p {
         font-size: 12px;
         color: var(--slate-3);
       }
-
       .footer span {
         color: var(--accent-blue-2);
         font-weight: 600;
       }
-
-      /* ── STAT CHIPS ── */
       .stat-row {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
         margin-top: 16px;
       }
-
       .stat-chip {
         display: flex;
         align-items: center;
@@ -883,7 +795,6 @@
         color: var(--slate-4);
         transition: all 0.4s;
       }
-
       .stat-chip.sc-green {
         border-color: rgba(16, 185, 129, 0.3);
         background: rgba(16, 185, 129, 0.08);
@@ -899,15 +810,12 @@
         background: rgba(245, 158, 11, 0.08);
         color: var(--yellow-2);
       }
-
       .stat-chip-dot {
         width: 7px;
         height: 7px;
         border-radius: 50%;
         background: currentColor;
       }
-
-      /* ── RESET BTN ── */
       .btn-reset {
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -924,7 +832,6 @@
         transition: all 0.18s;
         flex-shrink: 0;
       }
-
       .btn-reset:hover {
         background: rgba(255, 255, 255, 0.1);
         color: var(--white);
@@ -933,8 +840,6 @@
         width: 13px;
         height: 13px;
       }
-
-      /* ── SUMMARY STATS ── */
       .summary-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -942,7 +847,6 @@
         margin-bottom: 32px;
         animation: fadeUp 0.5s ease both 0.2s;
       }
-
       .summary-stat {
         background: rgba(255, 255, 255, 0.025);
         border: 1px solid rgba(255, 255, 255, 0.07);
@@ -950,7 +854,6 @@
         padding: 16px;
         text-align: center;
       }
-
       .summary-stat-num {
         font-family: var(--mono);
         font-size: 28px;
@@ -960,7 +863,6 @@
         margin-bottom: 4px;
         transition: color 0.4s;
       }
-
       .summary-stat-label {
         font-size: 11px;
         color: var(--slate-3);
@@ -968,8 +870,10 @@
         text-transform: uppercase;
         letter-spacing: 0.06em;
       }
-
-      /* ── ANIMATIONS ── */
+      .check-item.locked {
+        opacity: 0.45;
+        pointer-events: none;
+      }
       @keyframes fadeUp {
         from {
           opacity: 0;
@@ -980,7 +884,6 @@
           transform: translateY(0);
         }
       }
-
       @keyframes pulse-dot {
         0%,
         100% {
@@ -990,7 +893,6 @@
           opacity: 0.4;
         }
       }
-
       @keyframes pulse-red-glow {
         0%,
         100% {
@@ -1000,7 +902,6 @@
           box-shadow: 0 0 60px rgba(239, 68, 68, 0.2);
         }
       }
-
       @keyframes shake {
         0%,
         100% {
@@ -1013,14 +914,6 @@
           transform: translateX(6px);
         }
       }
-
-      /* ── LOCKED STATE ── */
-      .check-item.locked {
-        opacity: 0.45;
-        pointer-events: none;
-      }
-
-      /* ── RESPONSIVE ── */
       @media (max-width: 600px) {
         .input-row {
           flex-direction: column;
@@ -1044,7 +937,6 @@
   </head>
   <body>
     <div class="container">
-      <!-- TOPBAR -->
       <nav class="topbar">
         <a class="logo" href="#">
           <div class="logo-icon">
@@ -1068,24 +960,56 @@
         </div>
       </nav>
 
-      <!-- HERO -->
       <section class="hero">
         <div class="hero-eyebrow">
           <div class="hero-eyebrow-dot"></div>
-          Sistem Deteksi Aktif
+          Checklist Analisis Manual
         </div>
         <h1>
-          Amankan Karirmu dari<br />
-          <span class="gradient-text">Penipuan Lowongan Kerja</span>
+          Amankan Karirmu dari<br /><span class="gradient-text"
+            >Penipuan Lowongan Kerja</span
+          >
         </h1>
         <p class="hero-desc">
-          Analisis URL lowongan kerja secara cerdas dengan 16 indikator risiko
-          berbasis pola penipuan yang paling umum terjadi di Indonesia.
+          Identifikasi potensi penipuan lowongan kerja secara manual dengan 16
+          indikator risiko berbasis pola yang paling umum terjadi di Indonesia.
         </p>
 
-        <!-- INPUT -->
+        <!-- DISCLAIMER BARU -->
+        <div class="hero-disclaimer">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#f59e0b"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+            />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <p>
+            <strong>Perlu diketahui:</strong> Alat ini
+            <strong
+              >tidak melakukan verifikasi atau pemindaian link secara
+              otomatis.</strong
+            >
+            Memasukkan URL hanya digunakan sebagai referensi pencatatan lowongan
+            yang sedang diperiksa. Penilaian risiko sepenuhnya bergantung pada
+            <strong>checklist yang Anda centang secara manual</strong>
+            berdasarkan isi dan ciri-ciri lowongan tersebut.
+          </p>
+        </div>
+
         <div class="input-card">
-          <div class="input-label">URL / Link Lowongan Kerja</div>
+          <div class="input-label">
+            URL / Link Lowongan Kerja (Opsional — sebagai referensi)
+          </div>
           <div class="input-row">
             <div class="url-input-wrap" id="inputWrap">
               <svg
@@ -1109,7 +1033,7 @@
                 class="url-input"
                 id="urlInput"
                 type="text"
-                placeholder="Contoh: https://lowongan-kerja.blogspot.com/rekrutmen..."
+                placeholder="Tempel link lowongan di sini (opsional)..."
                 autocomplete="off"
                 spellcheck="false"
               />
@@ -1128,7 +1052,7 @@
                 <circle cx="11" cy="11" r="8" />
                 <path d="m21 21-4.35-4.35" />
               </svg>
-              Analisis Sekarang
+              Mulai Checklist
             </button>
           </div>
           <div class="url-analyzed-tag" id="urlTag">
@@ -1171,7 +1095,8 @@
             </div>
             <div class="status-title" id="statusTitle">Belum Dianalisis</div>
             <div class="status-sub" id="statusSub">
-              Masukkan URL lowongan kerja untuk memulai analisis
+              Masukkan URL lalu klik "Mulai Checklist" untuk mengaktifkan
+              indikator
             </div>
           </div>
           <button class="btn-reset" onclick="resetAll()">
@@ -1190,7 +1115,7 @@
           </button>
         </div>
         <div class="score-label">
-          <span>Tingkat Risiko</span>
+          <span>Tingkat Risiko (berdasarkan checklist manual)</span>
           <span class="score-num" id="scoreNum"
             >0 / 16 indikator tercentang</span
           >
@@ -1223,7 +1148,7 @@
         </div>
       </div>
 
-      <!-- SUMMARY STATS -->
+      <!-- SUMMARY -->
       <div class="summary-grid">
         <div class="summary-stat">
           <div class="summary-stat-num" id="sumChecked">0</div>
@@ -1251,7 +1176,6 @@
         </div>
       </div>
 
-      <!-- SECTION HEADER -->
       <div
         class="section-header"
         style="animation: fadeUp 0.5s ease both 0.15s"
@@ -1263,7 +1187,7 @@
         <div class="section-header-line"></div>
       </div>
 
-      <!-- ═══ KATEGORI 1: LINK & EMAIL ═══ -->
+      <!-- KATEGORI 1 -->
       <div class="checklist-card">
         <div class="cat-head">
           <div class="cat-icon ci-blue">
@@ -1289,7 +1213,6 @@
           </div>
           <div class="cat-count" id="catCount0">0/4</div>
         </div>
-
         <div class="check-item locked" id="item0" onclick="toggle(0, false)">
           <div class="checkbox" id="cb0">
             <svg
@@ -1310,7 +1233,6 @@
             <div><span class="check-badge cb-warn">⚠ Umum Ditemukan</span></div>
           </div>
         </div>
-
         <div class="check-item locked" id="item1" onclick="toggle(1, false)">
           <div class="checkbox" id="cb1">
             <svg
@@ -1331,7 +1253,6 @@
             <div><span class="check-badge cb-warn">⚠ Waspada</span></div>
           </div>
         </div>
-
         <div class="check-item locked" id="item2" onclick="toggle(2, false)">
           <div class="checkbox" id="cb2">
             <svg
@@ -1352,7 +1273,6 @@
             <div><span class="check-badge cb-danger">🔴 Berbahaya</span></div>
           </div>
         </div>
-
         <div class="check-item locked" id="item3" onclick="toggle(3, false)">
           <div class="checkbox" id="cb3">
             <svg
@@ -1375,7 +1295,7 @@
         </div>
       </div>
 
-      <!-- ═══ KATEGORI 2: BIAYA & PROSES ═══ -->
+      <!-- KATEGORI 2 -->
       <div class="checklist-card">
         <div class="cat-head">
           <div class="cat-icon ci-red">
@@ -1399,7 +1319,6 @@
           </div>
           <div class="cat-count" id="catCount1">0/5</div>
         </div>
-
         <div class="check-item locked" id="item4" onclick="toggle(4, true)">
           <div class="checkbox" id="cb4">
             <svg
@@ -1422,7 +1341,6 @@
             </div>
           </div>
         </div>
-
         <div class="check-item locked" id="item5" onclick="toggle(5, true)">
           <div class="checkbox" id="cb5">
             <svg
@@ -1446,7 +1364,6 @@
             </div>
           </div>
         </div>
-
         <div class="check-item locked" id="item6" onclick="toggle(6, true)">
           <div class="checkbox" id="cb6">
             <svg
@@ -1470,7 +1387,6 @@
             </div>
           </div>
         </div>
-
         <div class="check-item locked" id="item7" onclick="toggle(7, true)">
           <div class="checkbox" id="cb7">
             <svg
@@ -1494,7 +1410,6 @@
             </div>
           </div>
         </div>
-
         <div class="check-item locked" id="item8" onclick="toggle(8, false)">
           <div class="checkbox" id="cb8">
             <svg
@@ -1520,7 +1435,7 @@
         </div>
       </div>
 
-      <!-- ═══ KATEGORI 3: DESKRIPSI PEKERJAAN ═══ -->
+      <!-- KATEGORI 3 -->
       <div class="checklist-card">
         <div class="cat-head">
           <div class="cat-icon ci-yellow">
@@ -1538,7 +1453,6 @@
               <polyline points="14 2 14 8 20 8" />
               <line x1="16" y1="13" x2="8" y2="13" />
               <line x1="16" y1="17" x2="8" y2="17" />
-              <polyline points="10 9 9 9 8 9" />
             </svg>
           </div>
           <div class="cat-meta">
@@ -1547,7 +1461,6 @@
           </div>
           <div class="cat-count" id="catCount2">0/4</div>
         </div>
-
         <div class="check-item locked" id="item9" onclick="toggle(9, false)">
           <div class="checkbox" id="cb9">
             <svg
@@ -1571,7 +1484,6 @@
             </div>
           </div>
         </div>
-
         <div class="check-item locked" id="item10" onclick="toggle(10, false)">
           <div class="checkbox" id="cb10">
             <svg
@@ -1595,7 +1507,6 @@
             </div>
           </div>
         </div>
-
         <div class="check-item locked" id="item11" onclick="toggle(11, false)">
           <div class="checkbox" id="cb11">
             <svg
@@ -1617,7 +1528,6 @@
             <div><span class="check-badge cb-warn">⚠ Indikator Umum</span></div>
           </div>
         </div>
-
         <div class="check-item locked" id="item12" onclick="toggle(12, false)">
           <div class="checkbox" id="cb12">
             <svg
@@ -1643,7 +1553,7 @@
         </div>
       </div>
 
-      <!-- ═══ KATEGORI 4: KREDIBILITAS PERUSAHAAN ═══ -->
+      <!-- KATEGORI 4 -->
       <div class="checklist-card">
         <div class="cat-head">
           <div class="cat-icon ci-cyan">
@@ -1665,7 +1575,6 @@
           </div>
           <div class="cat-count" id="catCount3">0/3</div>
         </div>
-
         <div class="check-item locked" id="item13" onclick="toggle(13, false)">
           <div class="checkbox" id="cb13">
             <svg
@@ -1689,7 +1598,6 @@
             </div>
           </div>
         </div>
-
         <div class="check-item locked" id="item14" onclick="toggle(14, false)">
           <div class="checkbox" id="cb14">
             <svg
@@ -1713,7 +1621,6 @@
             </div>
           </div>
         </div>
-
         <div class="check-item locked" id="item15" onclick="toggle(15, false)">
           <div class="checkbox" id="cb15">
             <svg
@@ -1893,7 +1800,7 @@
         </div>
       </div>
 
-      <!-- FOOTER NOTE -->
+      <!-- FOOTER NOTE (DIPERBARUI) -->
       <div class="footer-note">
         <svg
           viewBox="0 0 24 24"
@@ -1908,17 +1815,25 @@
           <line x1="12" y1="16" x2="12.01" y2="16" />
         </svg>
         <p>
-          <strong>Disclaimer:</strong> Alat ini bersifat edukatif untuk membantu
-          identifikasi awal potensi penipuan. Hasil analisis tidak menggantikan
-          investigasi mendalam dan penilaian pribadi. Jika ragu, selalu
-          verifikasi langsung ke perusahaan melalui saluran resmi yang dapat
-          diverifikasi secara independen. Jangan pernah transfer uang
-          berdasarkan instruksi dari perekrut yang belum terverifikasi
-          identitasnya.
+          <strong>Disclaimer Penting:</strong> Alat ini bersifat
+          <strong>edukatif berbasis checklist manual</strong> dan
+          <strong
+            >tidak melakukan pemindaian, verifikasi, atau analisis link/URL
+            secara otomatis</strong
+          >. Memasukkan URL hanya berfungsi sebagai referensi lowongan yang
+          sedang Anda periksa — sistem tidak mengakses, membuka, atau mendeteksi
+          konten dari link tersebut. Hasil penilaian risiko sepenuhnya
+          ditentukan oleh indikator yang Anda centang berdasarkan pengamatan
+          pribadi terhadap isi lowongan. Jika ragu, selalu verifikasi langsung
+          ke perusahaan melalui saluran resmi yang dapat diverifikasi secara
+          independen.
+          <strong
+            >Jangan pernah transfer uang berdasarkan instruksi dari perekrut
+            yang belum terverifikasi identitasnya.</strong
+          >
         </p>
       </div>
 
-      <!-- FOOTER -->
       <footer class="footer">
         <p>
           <span>JobLink Verified</span> — Dibuat untuk melindungi pencari kerja
@@ -1929,12 +1844,9 @@
     </div>
 
     <script>
-      // ── STATE ──
       const TOTAL = 16;
       const checks = new Array(TOTAL).fill(false);
-      // Items 4,5,6,7 = critical (langsung MERAH jika dicentang)
       const criticalItems = [4, 5, 6, 7];
-      // Category ranges: [start, end] inclusive
       const catRanges = [
         [0, 3],
         [4, 8],
@@ -1943,7 +1855,6 @@
       ];
       let urlLocked = true;
 
-      // ── ANALYZE URL ──
       function analyzeURL() {
         const val = document.getElementById("urlInput").value.trim();
         if (!val) {
@@ -1954,16 +1865,14 @@
           setTimeout(() => {
             wrap.classList.remove("shake");
             document.getElementById("urlInput").placeholder =
-              "Contoh: https://lowongan-kerja.blogspot.com/rekrutmen...";
+              "Tempel link lowongan di sini (opsional)...";
           }, 1500);
           return;
         }
         urlLocked = false;
-        // Unlock all items
         document
           .querySelectorAll(".check-item")
           .forEach((el) => el.classList.remove("locked"));
-        // Show URL tag
         const tag = document.getElementById("urlTag");
         tag.classList.add("show");
         const display = val.length > 65 ? val.substring(0, 65) + "…" : val;
@@ -1971,7 +1880,6 @@
         updateUI();
       }
 
-      // ── TOGGLE ──
       function toggle(idx, isCritical) {
         if (urlLocked) {
           const wrap = document.getElementById("inputWrap");
@@ -1983,9 +1891,8 @@
         const cb = document.getElementById("cb" + idx);
         const ct = document.getElementById("ct" + idx);
         const item = document.getElementById("item" + idx);
-
         if (checks[idx]) {
-          cb.classList.add(criticalItems.includes(idx) ? "active" : "active");
+          cb.classList.add("active");
           ct.classList.add("dimmed");
           item.classList.add("checked-item");
         } else {
@@ -1996,31 +1903,22 @@
         updateUI();
       }
 
-      // ── UPDATE UI ──
       function updateUI() {
         const total = checks.filter(Boolean).length;
         const criticalCount = criticalItems.filter((i) => checks[i]).length;
         const hasCritical = criticalCount > 0;
         const safe = TOTAL - total;
-
-        // Determine status
         let status = "idle";
         if (!urlLocked) {
           if (hasCritical || total > 4) status = "red";
           else if (total >= 2) status = "yellow";
           else status = "green";
         }
-
-        // Update summary stats
         document.getElementById("sumChecked").textContent = total;
         document.getElementById("sumCritical").textContent = criticalCount;
         document.getElementById("sumSafe").textContent = safe;
-
-        // Update score num
         document.getElementById("scoreNum").textContent =
           total + " / " + TOTAL + " indikator tercentang";
-
-        // Update category counts
         catRanges.forEach((range, i) => {
           const catChecked = checks
             .slice(range[0], range[1] + 1)
@@ -2029,8 +1927,6 @@
           document.getElementById("catCount" + i).textContent =
             catChecked + "/" + catTotal;
         });
-
-        // Score bar
         const pct = urlLocked
           ? 1
           : Math.max(1, Math.min(100, (total / TOTAL) * 100));
@@ -2043,17 +1939,11 @@
         document.getElementById("scoreBar").style.width = pct + "%";
         document.getElementById("scoreBar").style.background =
           barColors[status];
-
-        // Status card class
         const card = document.getElementById("statusCard");
         card.className =
           "status-card" + (status !== "idle" ? " s-" + status : "");
-
-        // Icon wrap
         const iconWrap = document.getElementById("statusIconWrap");
         iconWrap.className = "status-icon-wrap ic-" + status;
-
-        // SVG icon
         const svg = document.getElementById("statusSvg");
         const icons = {
           idle: {
@@ -2078,8 +1968,6 @@
         };
         svg.innerHTML = icons[status].paths;
         svg.setAttribute("stroke", icons[status].stroke);
-
-        // Badge
         const badges = {
           idle: ["sb-idle", "MENUNGGU INPUT"],
           green: ["sb-green", "✓ AMAN & TERVERIFIKASI"],
@@ -2089,12 +1977,10 @@
         const badge = document.getElementById("statusBadge");
         badge.className = "status-badge " + badges[status][0];
         badge.textContent = badges[status][1];
-
-        // Title & sub
         const titles = {
           idle: [
             "Belum Dianalisis",
-            "Masukkan URL lowongan kerja untuk memulai analisis",
+            'Masukkan URL lalu klik "Mulai Checklist" untuk mengaktifkan indikator',
           ],
           green: [
             "Tidak Terdeteksi Indikasi Penipuan",
@@ -2118,21 +2004,17 @@
         };
         document.getElementById("statusTitle").textContent = titles[status][0];
         document.getElementById("statusSub").textContent = titles[status][1];
-
-        // Message
         const msgs = {
-          idle: "Centang semua ciri yang Anda temukan pada lowongan kerja tersebut. Sistem akan secara otomatis menghitung skor risiko dan memberikan rekomendasi tindakan yang tepat.",
+          idle: "Centang semua ciri yang Anda temukan pada lowongan kerja tersebut berdasarkan pengamatan Anda. Sistem akan menghitung skor risiko dan memberikan rekomendasi tindakan.",
           green:
-            "✅ Berdasarkan checklist 16 indikator, lowongan ini tidak menunjukkan tanda-tanda penipuan yang umum. Tetap waspada: selalu verifikasi langsung ke perusahaan melalui website resmi mereka. Jangan pernah membayar biaya apapun meskipun lowongan tampak sah. Selamat melamar — semoga berhasil!",
+            "✅ Berdasarkan checklist 16 indikator yang Anda isi, lowongan ini tidak menunjukkan tanda-tanda penipuan yang umum. Tetap waspada: selalu verifikasi langsung ke perusahaan melalui website resmi mereka. Jangan pernah membayar biaya apapun meskipun lowongan tampak sah. Selamat melamar — semoga berhasil!",
           yellow:
-            '⚠️ Lowongan ini memiliki beberapa tanda yang perlu diwaspadai. Langkah selanjutnya yang disarankan: (1) Hubungi HRD perusahaan langsung melalui website resmi — bukan melalui kontak yang tertera di lowongan tersebut. (2) Cek di LinkedIn apakah lowongan ini valid. (3) Google nama perusahaan + "penipuan". (4) JANGAN transfer uang apapun sebelum Anda 100% yakin.',
-          red: "🚨 PERINGATAN KERAS: Lowongan ini menunjukkan ciri-ciri penipuan yang sangat kuat. SEGERA HENTIKAN proses lamaran. JANGAN transfer uang dalam jumlah apapun. JANGAN bagikan data pribadi (KTP, rekening, foto selfie). Laporkan nomor atau link ini ke Bareskrim Polri (110), Kominfo (aduankonten.id), atau grup komunitas waspada lowongan palsu agar tidak ada korban lain.",
+            '⚠️ Lowongan ini memiliki beberapa tanda yang perlu diwaspadai berdasarkan checklist Anda. Langkah selanjutnya: (1) Hubungi HRD perusahaan langsung melalui website resmi — bukan melalui kontak di lowongan. (2) Cek di LinkedIn apakah lowongan ini valid. (3) Google nama perusahaan + "penipuan". (4) JANGAN transfer uang apapun sebelum Anda 100% yakin.',
+          red: "🚨 PERINGATAN KERAS: Berdasarkan checklist Anda, lowongan ini menunjukkan ciri-ciri penipuan yang sangat kuat. SEGERA HENTIKAN proses lamaran. JANGAN transfer uang dalam jumlah apapun. JANGAN bagikan data pribadi (KTP, rekening, foto selfie). Laporkan ke Bareskrim Polri (110) atau aduankonten.id agar tidak ada korban lain.",
         };
         const msgEl = document.getElementById("statusMsg");
         msgEl.textContent = msgs[status];
         msgEl.className = "status-message sm-" + status;
-
-        // Stat chips
         const chip1 = document.getElementById("chipTotal");
         const chip2 = document.getElementById("chipCritical");
         const chip3 = document.getElementById("chipRisk");
@@ -2160,7 +2042,6 @@
         document.getElementById("chipRiskTxt").textContent = riskLabels[status];
       }
 
-      // ── RESET ──
       function resetAll() {
         checks.fill(false);
         urlLocked = true;
@@ -2168,7 +2049,6 @@
         document.getElementById("urlTag").classList.remove("show");
         document.querySelectorAll(".checkbox").forEach((cb) => {
           cb.classList.remove("active", "active-warn");
-          cb.children[0] && (cb.children[0].style.opacity = "0");
         });
         document
           .querySelectorAll(".check-text")
@@ -2184,7 +2064,6 @@
         updateUI();
       }
 
-      // Init
       updateUI();
     </script>
   </body>
